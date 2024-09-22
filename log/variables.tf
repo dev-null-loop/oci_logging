@@ -1,24 +1,6 @@
-variable "defined_tags" {
-  description = "(Optional) (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)"
-  type        = map(string)
-  default     = null
-}
-
 variable "display_name" {
   description = "(Required) (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information. "
   type        = string
-}
-
-variable "freeform_tags" {
-  description = "(Optional) (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
-  type        = map(string)
-  default     = {}
-}
-
-variable "is_enabled" {
-  description = "(Optional) (Updatable) Whether or not this resource is currently enabled."
-  type        = bool
-  default     = true
 }
 
 variable "log_group_id" {
@@ -35,12 +17,6 @@ variable "log_type" {
   }
 }
 
-variable "retention_duration" {
-  description = "(Optional) (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180)."
-  type        = number
-  default     = 30
-}
-
 variable "configuration" {
   description = "(Optional) Log object configuration."
   type = object({
@@ -53,8 +29,32 @@ variable "configuration" {
   })
 }
 
+variable "defined_tags" {
+  description = "(Optional) (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)"
+  type        = map(string)
+  default     = null
+}
+
+variable "freeform_tags" {
+  description = "(Optional) (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
+  type        = map(string)
+  default     = {}
+}
+
+variable "is_enabled" {
+  description = "(Optional) (Updatable) Whether or not this resource is currently enabled."
+  type        = bool
+  default     = true
+}
+
+variable "retention_duration" {
+  description = "(Optional) (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180)."
+  type        = number
+  default     = 30
+}
+
 variable "logging_services" {
-  description = "List of services that support logging"
+  description = "services that support logging"
   type        = list(string)
   default = [
     "oacnativeproduction",
@@ -87,7 +87,7 @@ variable "logging_services" {
 }
 
 variable "logging_categories" {
-  description = "List of services' categories"
+  description = "List of service categories"
   type        = list(string)
   default = [
     "access",
