@@ -25,3 +25,9 @@ variable "freeform_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "is_compartment_id_in_subtree" {
+  description = "(Optional) Specifies whether or not nested compartments should be traversed. Defaults to false."
+  type        = bool
+  default     = false
+}
