@@ -125,3 +125,21 @@ variable "logging_categories" {
     "write"
   ]
 }
+
+variable "source_resource" {
+  description = "(Optional) Log object resource, which is a field of LogSummary.Configuration.Source."
+  type        = string
+  default     = null
+}
+
+variable "source_service" {
+  description = "(Optional) Service that created the log object, which is a field of LogSummary.Configuration.Source."
+  type        = string
+  default     = null
+}
+
+variable "state" {
+  description = "(Optional) Lifecycle state of the log object"
+  type        = string
+  default     = "ACTIVE"
+}
