@@ -7,10 +7,6 @@ data "oci_logging_logs" "these" {
   state           = var.state
 }
 
-# output "logs" {
-#   value = data.oci_logging_logs.these
-# }
-
 resource "oci_logging_log" "this" {
   display_name = var.display_name
   log_group_id = var.log_group_id
