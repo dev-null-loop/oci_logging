@@ -120,6 +120,7 @@ variable "logging_categories" {
     "subnet",
     "threatlog",
     "trafficlog",
+    "tunnellog",
     "vcn",
     "vnic",
     "write"
