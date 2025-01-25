@@ -29,10 +29,10 @@ resource "oci_logging_log" "this" {
   freeform_tags      = var.freeform_tags
   is_enabled         = var.is_enabled
   retention_duration = var.retention_duration
-  lifecycle {
-    precondition {
-      condition     = !(length(data.oci_logging_logs.these.logs) > 0)
-      error_message = "Error: A log in the log group already uses this display name. Use a different name. or A log already exists for this combination of service, resource, and category. Create a log for a unique combination."
-    }
-  }
+  # lifecycle {
+  #   precondition {
+  #     condition     = !(length(data.oci_logging_logs.these.logs) > 0)
+  #     error_message = "Error: A log in the log group already uses this display name. Use a different name. or A log already exists for this combination of service, resource, and category. Create a log for a unique combination."
+  #   }
+  # }
 }

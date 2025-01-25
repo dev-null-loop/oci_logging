@@ -22,10 +22,10 @@ variable "configuration" {
   type = object({
     compartment_id = optional(string)
     category       = string
+    parameters     = optional(map(string))
     resource       = string
     service        = string
     source_type    = string
-    parameters     = optional(map(string))
   })
 }
 
