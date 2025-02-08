@@ -25,7 +25,7 @@ variable "configuration" {
     parameters = optional(object({
       capture_filter        = optional(string)
       enablement_point_type = optional(string)
-    }))
+    }), null)
     resource    = string
     service     = string
     source_type = string
