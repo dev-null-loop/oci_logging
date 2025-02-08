@@ -24,7 +24,7 @@ variable "configuration" {
     category       = string
     parameters = optional(object({
       capture_filter        = optional(string)
-      enablement_point_type = optional(enablement_point_type)
+      enablement_point_type = optional(string)
     }))
     resource    = string
     service     = string
