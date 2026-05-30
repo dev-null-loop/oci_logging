@@ -30,6 +30,7 @@ variable "configuration" {
     service     = string
     source_type = string
   })
+  default = null
 }
 
 variable "defined_tags" {
@@ -54,96 +55,4 @@ variable "retention_duration" {
   description = "(Optional) (Updatable) Log retention duration in 30-day increments (30, 60, 90 and so on until 180)."
   type        = number
   default     = 30
-}
-
-variable "logging_services" {
-  description = "services that support logging"
-  type        = list(string)
-  default = [
-    "oacnativeproduction",
-    "apigateway",
-    "adm",
-    "apm",
-    "och",
-    "oke-k8s-cp-prod",
-    "dataflow",
-    "dataintegration",
-    "datascience",
-    "devops",
-    "emaildelivery",
-    "cloudevents",
-    "filestorage",
-    "functions",
-    "goldengate",
-    "integration",
-    "loadbalancer",
-    "mediaflow",
-    "ocinetworkfirewall",
-    "objectstorage",
-    "operatoraccessprod",
-    "postgresql",
-    "oci_c3_vpn",
-    "flowlogs",
-    "waa",
-    "waf"
-  ]
-}
-
-variable "logging_categories" {
-  description = "List of service categories"
-  type        = list(string)
-  default = [
-    "access",
-    "activitystream",
-    "all",
-    "all-service-logs",
-    "audit",
-    "cloud-controller-manager",
-    "diagnostic",
-    "disworkspacelogs",
-    "dropped-data",
-    "error",
-    "error_logs",
-    "execution",
-    "hypervisor_logs",
-    "invoke",
-    "kube-apiserver",
-    "kube-controller-manager",
-    "kube-scheduler",
-    "nfslogs",
-    "outboundaccepted",
-    "outboundrelayed",
-    "pipelinerunlog",
-    "postgresql_database_logs",
-    "process_logs",
-    "read",
-    "remediationrecipelogs",
-    "ruleexecutionlog",
-    "runlog",
-    "subnet",
-    "threatlog",
-    "trafficlog",
-    "tunnellog",
-    "vcn",
-    "vnic",
-    "write"
-  ]
-}
-
-variable "source_resource" {
-  description = "(Optional) Log object resource, which is a field of LogSummary.Configuration.Source."
-  type        = string
-  default     = null
-}
-
-variable "source_service" {
-  description = "(Optional) Service that created the log object, which is a field of LogSummary.Configuration.Source."
-  type        = string
-  default     = null
-}
-
-variable "state" {
-  description = "(Optional) Lifecycle state of the log object"
-  type        = string
-  default     = "ACTIVE"
 }
