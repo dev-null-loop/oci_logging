@@ -12,7 +12,7 @@ variable "defined_tags" {
 variable "description" {
   description = "(Optional) (Updatable) Description for this resource."
   type        = string
-  default     = "logging group"
+  default     = null
 }
 
 variable "display_name" {
@@ -24,10 +24,4 @@ variable "freeform_tags" {
   description = "(Optional) (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)."
   type        = map(string)
   default     = {}
-}
-
-variable "is_compartment_id_in_subtree" {
-  description = "(Optional) Specifies whether or not nested compartments should be traversed. Defaults to false."
-  type        = bool
-  default     = false
 }
